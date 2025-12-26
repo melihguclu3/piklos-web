@@ -2455,3 +2455,17 @@ body::after{
 .loader-logo{
   font-size: clamp(28px, 7vw, 40px);
 }
+/* === MOBİLDE SAYFA SAĞA TAŞMASIN (EN ALTA EKLE) === */
+html, body { max-width: 100%; overflow-x: hidden; }
+
+/* AI bölümündeki 6 sütunu mobilde tek sütuna zorla */
+@media (max-width: 768px) {
+  #ai-tech .ai-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Bu da mobilde geniş kalırsa tek sütun yap */
+  .case-grid {
+    grid-template-columns: 1fr;
+  }
+}
