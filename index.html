@@ -971,57 +971,69 @@ function open(tabName = "privacy"){
         });
 
         // 4. SLIDER
-        const sliders = document.querySelectorAll('.drag-scroll');
-        sliders.forEach(slider => {
-            let isDown = false; let startX; let scrollLeft;
-            let autoScrollSpeed = 0.2; let preciseScroll = slider.scrollLeft; 
-            function autoScroll() {
-                if (!isDown && !slider.matches(':hover')) {
-                    preciseScroll += autoScrollSpeed; slider.scrollLeft = preciseScroll;
-                    if (slider.scrollLeft >= (slider.scrollWidth - slider.clientWidth - 1)) { slider.scrollLeft = 0; preciseScroll = 0; }
-                }
-                requestAnimationFrame(autoScroll);
-            }
-            autoScroll();
-            slider.addEventListener('mousedown', (e) => { isDown = true; startX = e.pageX - slider.offsetLeft; scrollLeft = slider.scrollLeft; preciseScroll = slider.scrollLeft; });
-            slider.addEventListener('mouseleave', () => { isDown = false; });
-            slider.addEventListener('mouseup', () => { isDown = false; });
-            slider.addEventListener('mousemove', (e) => { if (!isDown) return; e.preventDefault(); const x = e.pageX - slider.offsetLeft; const walk = (x - startX) * 2; slider.scrollLeft = scrollLeft - walk; preciseScroll = slider.scrollLeft; });
-        });
-        // HAMBURGER MENU SCRIPT
-    const hamburger = document.querySelector(".hamburger");
-    const navMenu = document.querySelector(".nav-menu");
+const slider = document.querySelector('.drag-scroll');
 
-    hamburger.addEventListener("click", () => {
-        hamburger.classList.toggle("active");
-        navMenu.classList.toggle("active");
-    });
+let isDown = false;
+let startX;
+let scrollLeft;
+let preciseScroll;
 
-    // Linke tıklanınca menüyü kapat
-    function closeMenu() {
-        hamburger.classList.remove("active");
-        navMenu.classList.remove("active");
-    }
-    </script>
-<script>
-  (function () {
-    const hamburger = document.querySelector(".hamburger");
-    const navMenu = document.querySelector(".nav-menu");
+// 🔴 MOBİLDE BU KOD HİÇ ÇALIŞMASIN
+if (window.innerWidth > 768) {
 
-    if (!hamburger || !navMenu) return;
+  autoScroll();
 
-    hamburger.addEventListener("click", () => {
-      hamburger.classList.toggle("active");
-      navMenu.classList.toggle("active");
-    });
+  slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+    preciseScroll = slider.scrollLeft;
+  });
 
-    // HTML'de onclick="closeMenu()" kullandığın için global yapıyoruz
-    window.closeMenu = function () {
-      hamburger.classList.remove("active");
-      navMenu.classList.remove("active");
-    };
-  })();
+  slider.addEventListener('mouseleave', () => {
+    isDown = false;
+  });
+
+  slider.addEventListener('mouseup', () => {
+    isDown = false;
+  });
+
+  slider.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 2;
+    slider.scrollLeft = scrollLeft - walk;
+    preciseScroll = slider.scrollLeft;
+  });
+}
+
+
+
 </script>
+
+<script>
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-menu");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+
+    document.body.classList.toggle(
+      "menu-open",
+      navMenu.classList.contains("active")
+    );
+  });
+
+  function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+    document.body.classList.remove("menu-open");
+  }
+</script>
+
 
     
 </body>
