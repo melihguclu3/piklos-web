@@ -1003,6 +1003,26 @@ function open(tabName = "privacy"){
         navMenu.classList.remove("active");
     }
     </script>
+<script>
+  (function () {
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+
+    if (!hamburger || !navMenu) return;
+
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    });
+
+    // HTML'de onclick="closeMenu()" kullandığın için global yapıyoruz
+    window.closeMenu = function () {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+    };
+  })();
+</script>
+
     
 </body>
 </html>
