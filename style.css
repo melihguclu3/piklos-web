@@ -2469,3 +2469,42 @@ html, body { max-width: 100%; overflow-x: hidden; }
     grid-template-columns: 1fr;
   }
 }
+/* Preloader kapanınca tıklamaları engellemesin */
+.preloader.hide{
+  pointer-events: none;
+  opacity: 0;
+}
+/* Mobilde sağa taşma + büyümüş gibi görünme fix */
+html, body { width: 100%; overflow-x: hidden; }
+img, video, canvas { max-width: 100%; height: auto; }
+* { box-sizing: border-box; }
+/* =========================
+   MOBIL SLIDER KAYDIRMA FIX
+   ========================= */
+@media (max-width: 768px) {
+
+  .drag-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    display: flex;
+    gap: 14px;
+
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+    touch-action: pan-x;       /* 🔴 ASIL KURTARAN */
+    overscroll-behavior-x: contain;
+
+    cursor: grab;
+  }
+
+  .drag-scroll:active {
+    cursor: grabbing;
+  }
+
+  .drag-scroll .slide {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+}
