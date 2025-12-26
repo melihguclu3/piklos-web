@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piklos | Independent Digital Studio</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="preloader">
+        <div class="loader-content">
+            <div class="loader-logo">P<span>IK</span>LOS</div>
+            <div class="loader-line"></div>
+        </div>
+    </div>
+
+    <canvas id="snow-canvas"></canvas>
+
+<header class="navbar">
+        <a href="#" class="logo">P<span>IK</span>LOS</a>
+        
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="#isler" onclick="closeMenu()">İşler</a>
+            <a href="#neden-biz" onclick="closeMenu()">Felsefemiz</a>
+            <a href="#surec" onclick="closeMenu()">Süreç</a>
+            <a href="#yorumlar" onclick="closeMenu()">Yorumlar</a>
+            <a href="#fiyatlar" onclick="closeMenu()">Paketler</a>
+            <a href="#iletisim" onclick="closeMenu()">İletişim</a>
+        </nav>
+    </header>
+
+<header>
+        <div class="header-bg"></div>
+        <div class="header-content">
+            <div class="sub-title">piklos</div>
+            
+            <h1>Yenilikçi<br>Web Tasarımları</h1>
+            
+            <p>Markanız için sadece bir web sitesi değil, yaşayan ve satış getiren dijital bir ekosistem tasarlıyoruz.</p>
+            
+            <div class="hero-btns">
+                <button onclick="toggleModal()" class="btn-hero btn-primary" style="border-style:solid;">Projeyi Başlat</button>
+                <a href="#isler" class="btn-hero btn-outline">İşleri Gör</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="marquee-wrap">
+        <div class="marquee-track">
+             <div class="marquee-item">YARATICI ARAYÜZ TASARIMI • KULLANICI DENEYİMİ (UX) • E-TİCARET ÇÖZÜMLERİ • SEO & ANALİTİK • CLEAN CODE • DİJİTAL MARKA STRATEJİSİ • MOBİL UYUMLU ALTYAPI • ÖZEL YAZILIM • API ENTEGRASYONU • YÜKSEK PERFORMANS • KURUMSAL KİMLİK • GÜVENLİK & BAKIM •</div>
+            <div class="marquee-item">YARATICI ARAYÜZ TASARIMI • KULLANICI DENEYİMİ (UX) • E-TİCARET ÇÖZÜMLERİ • SEO & ANALİTİK • CLEAN CODE • DİJİTAL MARKA STRATEJİSİ • MOBİL UYUMLU ALTYAPI • ÖZEL YAZILIM • API ENTEGRASYONU • YÜKSEK PERFORMANS • KURUMSAL KİMLİK • GÜVENLİK & BAKIM •</div>
+        </div>
+    </div>
+
+       <section id="isler" class="section-padding">
+        <div class="section-header">
+            <h2>Seçili İşler</h2>
+            <p>→</p>
+        </div>
+        <div class="slider-wrapper drag-scroll">
+            <div class="slide">
+                <div class="slide-img logo-slide">
+                    <img src="https://melihguclu.com.tr/wp-content/uploads/2025/02/dfs-300x150.png" alt="Turhanlar Mermer & Dekorasyon logo" loading="lazy">
+                </div>
+                <h3>Turhanlar</h3><p>Mermer & Dekorasyon</p>
+            </div>
+            <div class="slide">
+                <div class="slide-img logo-slide">
+                    <img src="https://melihguclu.com.tr/wp-content/uploads/2024/10/primemeg-300x150.png" alt="Prime Gym logo" loading="lazy">
+                </div>
+                <h3>Prime Gym</h3><p>Spor Salonu</p>
+            </div>
+            <div class="slide">
+                <div class="slide-img logo-slide">
+                    <img src="https://melihguclu.com.tr/wp-content/uploads/2024/10/ozkanlarmeg-300x150.png" alt="Özkanlar logo" loading="lazy">
+                </div>
+                <h3>Özkanlar</h3><p>Ahşap & Mobilya</p>
+            </div>
+            <div class="slide">
+                <div class="slide-img logo-slide">
+                    <img src="https://melihguclu.com.tr/wp-content/uploads/2024/10/lalemeg-300x150.png" alt="Lale logo" loading="lazy">
+                </div>
+                <h3>Lale Pide</h3><p>Restoran</p>
+            </div>
+            <div class="slide">
+                <div class="slide-img logo-slide">
+                    <img src="https://melihguclu.com.tr/wp-content/uploads/2024/10/kuponlymeg-300x150.png" alt="Kuponlu logo" loading="lazy">
+                </div>
+                <h3>Kuponly.com</h3><p>Pazarlama</p>
+            </div>
+        </div>
+    </section>
+
+   <section id="ai-tech" class="section-padding" style="position: relative; overflow: hidden;">
+  <div class="ai-glow"></div>
+
+  <div class="section-header">
+<h2 class="ai-title" data-text="AI ile Güçlendirildi">AI ile Güçlendirildi</h2>
+    <p>Geleceği Bugünden Kodluyoruz</p>
+  </div>
+
+  <div class="ai-grid ai-grid--6">
+    <div class="ai-card ai-card--mini glow-purple">
+      <div class="ai-icon ai-icon--svg" aria-hidden="true">
+        <!-- Brain -->
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8.5 6.5a3.5 3.5 0 0 1 6.9.8A3.2 3.2 0 0 1 18.5 10v2a3 3 0 0 1-3 3H14"/>
+          <path d="M8 18H7.5A3.5 3.5 0 0 1 4 14.5V12a3.2 3.2 0 0 1 2.9-3.2A3.5 3.5 0 0 1 8.5 6.5"/>
+          <path d="M10 6v12"/>
+          <path d="M14 7v11"/>
+        </svg>
+      </div>
+      <h3>Akıllı Strateji</h3>
+      <p>Hedef kitlenize göre içerik, tasarım ve teklif yapısını optimize ediyoruz.</p>
+    </div>
+
+    <div class="ai-card ai-card--mini glow-cyan">
+      <div class="ai-icon ai-icon--svg" aria-hidden="true">
+        <!-- Chip -->
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="7" y="7" width="10" height="10" rx="2"/>
+          <path d="M4 9h3M4 15h3M17 9h3M17 15h3M9 4v3M15 4v3M9 17v3M15 17v3"/>
+        </svg>
+      </div>
+      <h3>AI Tasarım</h3>
+      <p>Markanıza özel görsel/kompozisyon üretimiyle benzersiz arayüzler.</p>
+    </div>
+
+    <div class="ai-card ai-card--mini glow-pink">
+      <div class="ai-icon ai-icon--svg" aria-hidden="true">
+        <!-- Spark -->
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2l1.2 4.3L17.5 8l-4.3 1.2L12 13l-1.2-3.8L6.5 8l4.3-1.7L12 2z"/>
+          <path d="M5 13l.7 2.5L8 16l-2.3.7L5 19l-.7-2.3L2 16l2.3-.5L5 13z"/>
+          <path d="M18 14l.7 2.5L21 17l-2.3.7L18 20l-.7-2.3L15 17l2.3-.5L18 14z"/>
+        </svg>
+      </div>
+      <h3>Generative UI</h3>
+      <p>Stok yerine, proje diline uygun AI üretimi görsel & arayüz varlıkları.</p>
+    </div>
+
+    <div class="ai-card ai-card--mini glow-orange">
+      <div class="ai-icon ai-icon--svg" aria-hidden="true">
+        <!-- Wand / Automation -->
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 20l10-10"/>
+          <path d="M14 10l6-6"/>
+          <path d="M15.5 4.5l4 4"/>
+          <path d="M6 15l3 3"/>
+        </svg>
+      </div>
+      <h3>Otomasyon</h3>
+      <p>Form/lead akışı, randevu, CRM ve raporlama süreçlerini hızlandırırız.</p>
+    </div>
+
+    <div class="ai-card ai-card--mini glow-green">
+      <div class="ai-icon ai-icon--svg" aria-hidden="true">
+        <!-- Shield -->
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2l8 4v6c0 5-3.5 9-8 10C7.5 21 4 17 4 12V6l8-4z"/>
+          <path d="M9 12l2 2 4-4"/>
+        </svg>
+      </div>
+      <h3>Güvenli Altyapı</h3>
+      <p>Hız, güvenlik ve SEO tarafını aynı anda sağlam tutarız.</p>
+    </div>
+
+    <div class="ai-card ai-card--mini glow-blue">
+      <div class="ai-icon ai-icon--svg" aria-hidden="true">
+        <!-- Target -->
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="8"/>
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v3M22 12h-3M12 22v-3M2 12h3"/>
+        </svg>
+      </div>
+      <h3>Kişiselleştirme</h3>
+      <p>Kullanıcı davranışına göre içerik ve yönlendirmeleri iyileştiririz.</p>
+    </div>
+  </div>
+</section>
+<section id="tech-stack" class="section-padding">
+  <div class="section-header">
+    <h2>Teknoloji & Altyapı</h2>
+    <p>Projelerimizi güçlü, hızlı ve sürdürülebilir teknolojilerle geliştiriyoruz.</p>
+  </div>
+
+  <div class="tech-grid">
+    <div class="tech-card">
+      <span class="tech-icon">⚡</span>
+      <h3>Modern Frontend</h3>
+      <p>Performans odaklı, ölçeklenebilir ve kullanıcı deneyimini merkeze alan arayüzler.</p>
+      <span class="tech-tags">React • Next.js • Tailwind</span>
+    </div>
+
+    <div class="tech-card">
+      <span class="tech-icon">🧠</span>
+      <h3>AI & Otomasyon</h3>
+      <p>İş süreçlerini hızlandıran, veriye dayalı ve akıllı otomasyon çözümleri.</p>
+      <span class="tech-tags">AI Tools • Automation • API</span>
+    </div>
+
+    <div class="tech-card">
+      <span class="tech-icon">🚀</span>
+      <h3>SEO & Performans</h3>
+      <p>Hızlı yüklenen, arama motorlarına uyumlu ve yüksek performanslı altyapılar.</p>
+      <span class="tech-tags">Core Web Vitals • Lighthouse</span>
+    </div>
+
+    <div class="tech-card">
+      <span class="tech-icon">🔒</span>
+      <h3>Güvenlik & Stabilite</h3>
+      <p>Güvenli veri yönetimi, stabil yapı ve uzun vadeli sürdürülebilirlik.</p>
+      <span class="tech-tags">SSL • Security • Backup</span>
+    </div>
+  </div>
+</section>
+
+    </section>
+
+    <section id="neden-biz" class="section-padding">
+        <div class="section-header">
+            <h2>Felsefemiz</h2>
+            <p>Neden Piklos?</p>
+        </div>
+        <div class="manifesto-grid">
+            <div class="manifesto-content">
+                <p class="manifesto-text">
+                    <strong>Biz dijital bir seri üretim hattı değiliz.</strong> Her markanın parmak izi gibi eşsiz olduğuna inanıyor, bu yüzden "kopyala-yapıştır" şablonları reddediyoruz.
+                    <br><br>
+                    Web tasarımı bizim için sadece kodların hatasız çalışması değil; markanızın kullanıcıyla <span class="highlight">duygusal bir bağ</span> kurmasıdır. Masaya sizinle bir "satıcı" olarak değil, dijital dünyadaki uzun vadeli "ortağınız" olarak oturuyoruz.
+                    <br><br>
+                    Karmaşık jargonların arkasına saklanmıyoruz. Şeffafız, hızlıyız ve detaylara takıntılıyız. Hedefimiz basit: Sizi internetin gürültüsü içinde kaybolmaktan kurtarıp, <span class="highlight">hatırlanır kılmak.</span>
+                </p>
+            </div>
+            <div class="tags-wrapper">
+                <div class="tech-tag">Butik Ajans</div>
+                <div class="tech-tag">Clean Code</div>
+                <div class="tech-tag">SEO Odaklı</div>
+                <div class="tech-tag">Hızlı Teslimat</div>
+                <div class="tech-tag">Minimalist</div>
+                <div class="tech-tag">Kullanıcı Deneyimi</div>
+                <div class="tech-tag">Responsive</div>
+                <div class="tech-tag">Ölçeklenebilir</div>
+                <div class="tech-tag">Güvenlik</div>
+                <div class="tech-tag">Yaratıcı Strateji</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="surec" class="section-padding" style="background: #080808;">
+        <div class="section-header">
+            <h2>Süreç</h2>
+            <p>Nasıl Çalışıyoruz?</p>
+        </div>
+        <div class="process-grid">
+            <div class="process-item">
+                <span class="process-num">01</span>
+                <h3>Analiz</h3>
+                <p>Markanızı, hedef kitlenizi ve beklentilerinizi analiz ederek net bir yol haritası oluşturuyoruz.</p>
+            </div>
+            <div class="process-item">
+                <span class="process-num">02</span>
+                <h3>Tasarım</h3>
+                <p>Kullanıcı deneyimini merkeze alan, modern ve markanıza özel arayüzler tasarlıyoruz.</p>
+            </div>
+            <div class="process-item">
+                <span class="process-num">03</span>
+                <h3>Kodlama</h3>
+                <p>Temiz kod prensipleriyle, hızlı, güvenli ve SEO uyumlu altyapılar geliştiriyoruz.</p>
+            </div>
+            <div class="process-item">
+                <span class="process-num">04</span>
+                <h3>Launch</h3>
+                <p>Test sürecinin ardından projeyi yayına alıyor, sürdürülebilir teknik destek sağlıyoruz.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="fiyatlar" class="section-padding">
+        <div class="section-header">
+            <h2>Fiyatlandırma</h2>
+            <p>Markanıza Uygun Çözümü Seçin</p>
+        </div>
+        <div class="pricing-wrapper">
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <div class="price-header">
+                        <span class="price-name">Launch</span>
+                        <div class="price-num">15.000₺ <span class="start-text">'den başlayan</span></div>
+                    </div>
+                    <ul class="price-features">
+                        <li>Tek Sayfa (Landing)</li>
+                        <li>Mobil Uyumlu Tasarım</li>
+                        <li>Temel SEO Ayarları</li>
+                        <li>İletişim Formu</li>
+                        <li>Hosting Kurulumu</li>
+                        <li class="dimmed">Yönetim Paneli (CMS)</li>
+                        <li class="dimmed">Özel Animasyonlar</li>
+                    </ul>
+                    <a href="mailto:info@piklos.com?subject=Start Paket" class="price-btn">Başla</a>
+                </div>
+                <div class="price-card popular">
+                    <div class="popular-badge">En Çok Tercih Edilen</div>
+                    <div class="price-header">
+                        <span class="price-name">Glow / Kurumsal</span>
+                        <div class="price-num">35.000₺ <span class="start-text">'den başlayan</span></div>
+                    </div>
+                    <ul class="price-features">
+                        <li>5-8 Alt Sayfa</li>
+                        <li>Tamamen Yönetilebilir (CMS)</li>
+                        <li>Blog / Haberler Modülü</li>
+                        <li>Gelişmiş SEO & Analytics</li>
+                        <li>WhatsApp Entegrasyonu</li>
+                        <li>Hızlı Açılış Optimizasyonu</li>
+                        <li>Google Harita Kaydı</li>
+                    </ul>
+                    <a href="mailto:info@piklos.com?subject=Pro Paket" class="price-btn">Planı Seç</a>
+                </div>
+                <div class="price-card">
+                    <div class="price-header">
+                        <span class="price-name">Scale / E-Ticaret</span>
+                        <div class="price-num">65.000₺ <span class="start-text">'den başlayan</span></div>
+                    </div>
+                    <ul class="price-features">
+                        <li>Sınırsız Ürün Ekleme</li>
+                        <li>Kredi Kartı / Iyzico Entegrasyonu</li>
+                        <li>Sipariş Yönetim Paneli</li>
+                        <li>Üyelik Sistemi</li>
+                        <li>Stok Takibi & Raporlama</li>
+                        <li>Sepet & Favoriler</li>
+                        <li>Dinamik Filtreleme</li>
+                    </ul>
+                    <a href="mailto:info@piklos.com?subject=E-Ticaret Paket" class="price-btn">Başla</a>
+                </div>
+                <div class="price-card">
+                    <div class="price-header">
+                        <span class="price-name">Elite / Custom</span>
+                        <div class="price-num">Teklif <span class="start-text custom-text">Projenize Özel</span></div>
+                    </div>
+                    <ul class="price-features">
+                        <li>Özel Web Uygulaması (SaaS)</li>
+                        <li>API Entegrasyonları</li>
+                        <li>Özel Veritabanı Mimarisi</li>
+                        <li>Yüksek Trafik Çözümleri</li>
+                        <li>7/24 Öncelikli Destek</li>
+                        <li>Siber Güvenlik Paketi</li>
+                        <li>Mobil App (Opsiyonel)</li>
+                    </ul>
+                    <a href="mailto:info@piklos.com?subject=Özel Teklif" class="price-btn">İletişime Geç</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="yorumlar" class="section-padding">
+<div class="slider-wrapper drag-scroll">
+    <div class="testi-slide">
+        <div>
+            <div class="stars">★★★★★</div>
+            <p class="testi-text">"İşletmemin tüm özelliklerini, fiyat listemi ve çok daha fazlasını tek bir sayfada görüntülenebiliyor, müşteriye kolaylık açısından muazzam."</p>
+        </div>
+        <div class="author">
+            <div class="author-avatar" style="background-image: url('https://www.primegym.com.tr/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-12-at-19.16.02.webp?q=80&w=200')"></div>
+            <div class="author-info">
+                <h4>Prime Gym</h4>
+                <span>Spor Salonu</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="testi-slide">
+        <div>
+            <div class="stars">★★★★★</div>
+            <p class="testi-text">"Site eskiden vardı ama bir şey ifade etmiyordu. Şimdi ne yaptığımız daha net anlatılıyor. Teklif isteyen kişiler gerçekten ihtiyacı olan kişiler oluyor, o farkı direkt hissettik."</p>
+        </div>
+        <div class="author">
+            <div class="author-avatar" style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200')"></div>
+            <div class="author-info">
+                <h4>Turhanlar</h4>
+                <span>Mermer & Dekorasyon</span>
+            </div>
+        </div>
+    </div>
+
+<div class="testi-slide">
+    <div>
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"Restoran dolu olmasına rağmen dışarıdan bizi pek tanımayan çoktu. Site yayına girdikten sonra insanlar menüye bakıp gelmeye başladı."</p>
+    </div>
+    <div class="author">
+<div class="author-avatar" style="background-image: url('https://images.unsplash.com/photo-1595152772835-219674b2a8a6?q=80&w=200')"></div>
+        <div class="author-info">
+            <h4>Lale Pide</h4>
+            <span>Restoran</span>
+        </div>
+    </div>
+</div>
+
+    <div class="testi-slide">
+        <div>
+            <div class="stars">★★★★★</div>
+            <p class="testi-text">"Tasarım tarafı zaten iyiydi ama asıl fark içerikte oldu. Anlatım sadeleşti, görsellerle uyumlu hale geldi. Siteye giren biri markayı daha ‘ciddi’ algılıyor."</p>
+        </div>
+        <div class="author">
+            <div class="author-avatar" style="background-image: url('https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200')"></div>
+            <div class="author-info">
+                <h4>Özkanlar</h4>
+                <span>Ahşap & Mobilya</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </section>
+
+<section class="section-padding" style="background: #080808;">
+        <div class="faq-grid">
+            <div>
+                <h2>Merak Edilenler</h2>
+                <p style="margin-top:20px; line-height: 1.6;">Projenizle ilgili aklınıza takılan tüm soruların net cevapları burada. Başka sorunuz mu var? <a href="mailto:info@piklos.com" style="color:var(--accent); text-decoration:none;">Bize yazın.</a></p>
+            </div>
+            
+            <div>
+                <div class="faq-item">
+                    <details>
+                        <summary>Proje süreci ve teslimat ne kadar sürer?</summary>
+                        <p>Bu tamamen projenin kapsamına bağlıdır. Tek sayfalık "Landing Page" projelerini ortalama <strong>1 hafta</strong>, çok sayfalı kurumsal web sitelerini ise <strong>2-4 hafta</strong> içinde teslim ediyoruz. Özel yazılım projeleri için takvimi birlikte belirliyoruz.</p>
+                    </details>
+                </div>
+
+                <div class="faq-item">
+                    <details>
+                        <summary>Web sitemi kendim güncelleyebilir miyim?</summary>
+                        <p>Kesinlikle! Size özel, kullanımı çok basit bir <strong>Yönetim Paneli (CMS)</strong> kuruyoruz. Kod bilmenize gerek kalmadan metinleri, görselleri, blog yazılarını veya ürünleri kolayca değiştirebilirsiniz.</p>
+                    </details>
+                </div>
+
+                <div class="faq-item">
+                    <details>
+                        <summary>Ödeme koşullarınız nasıl?</summary>
+                        <p>Genel çalışma prensibimiz; projenin başında <strong>%50 ön ödeme</strong>, proje onaylanıp yayına alınmadan hemen önce ise kalan <strong>%50 ödeme</strong> şeklindedir. Kredi kartı ile taksitli ödeme seçeneklerimiz de mevcuttur.</p>
+                    </details>
+                </div>
+
+                <div class="faq-item">
+                    <details>
+                        <summary>Proje bittikten sonra teknik destek veriyor musunuz?</summary>
+                        <p>Evet, müşterimizi asla yarı yolda bırakmıyoruz. Web siteniz yayına girdikten sonra <strong>1 ay boyunca ücretsiz teknik destek</strong> sağlıyoruz. Daha sonrası için yıllık bakım/destek paketlerimizden yararlanabilirsiniz.</p>
+                    </details>
+                </div>
+
+                <div class="faq-item">
+                    <details>
+                        <summary>Hangi teknolojileri kullanıyorsunuz?</summary>
+                        <p>Eski ve yavaş sistemler (hazır şablonlar) yerine; Google'ın da sevdiği modern teknolojileri tercih ediyoruz. Genellikle <strong>React, Next.js ve Tailwind CSS</strong> kullanarak ultra hızlı ve güvenli siteler kodluyoruz.</p>
+                    </details>
+                </div>
+
+                <div class="faq-item">
+                    <details>
+                        <summary>Sitem SEO uyumlu olacak mı?</summary>
+                        <p>Evet. Kodladığımız tüm siteler "Teknik SEO" standartlarına %100 uyumludur. Hızlı açılış süreleri, mobil uyumluluk, doğru etiket yapısı ve site haritası gibi Google'ın sevdiği tüm altyapıyı hazır sunuyoruz.</p>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="tech-stack">
+        <p style="font-size: 13px; letter-spacing: 2px; color: var(--text-dim); text-transform: uppercase;">Kullandığımız Teknolojiler</p>
+        <div class="tech-logos"><span>FIGMA</span><span>REACT</span><span>NEXT.JS</span><span>TAILWIND</span><span>WEBFLOW</span></div>
+    </div>
+
+    <section id="iletisim" class="cta-section">
+        <h2 class="cta-title">Bir sonraki büyük <br>fikri konuşalım mı?</h2>
+        <button onclick="toggleModal()" class="btn-big" style="border:none; cursor:pointer;">PROJE BAŞLAT</button>
+    </section>
+
+<!-- COOKIE DOT (minimal) -->
+<button id="cookieDot" class="cookie-dot" type="button" aria-label="Çerez tercihleri">
+  🍪
+</button>
+
+<div id="cookiePanel" class="cookie-panel" role="dialog" aria-live="polite" aria-label="Çerez Bilgilendirmesi" hidden>
+  <p class="cookie-panel__title">Çerez Kullanımı</p>
+
+  <p class="cookie-panel__text">
+    Piklos, deneyiminizi iyileştirmek ve temel işlevleri sağlamak için çerezleri kullanır.
+    Detaylı bilgi için
+    <button type="button" class="cookie-panel__link" id="openPrivacyModal">Gizlilik & Çerez Politikası</button>
+    sayfasını inceleyebilirsiniz.
+  </p>
+
+  <div class="cookie-panel__actions">
+    <button id="cookieReject" class="cookie-panel__btn" type="button">Reddet</button>
+    <button id="cookieAccept" class="cookie-panel__btn primary" type="button">Kabul</button>
+  </div>
+</div>
+
+<div id="privacyModal" class="privacy-modal" hidden>
+  <div class="privacy-modal__backdrop" id="privacyModalClose"></div>
+
+  <div class="privacy-modal__card" role="dialog" aria-modal="true" aria-label="Gizlilik ve Çerez Politikası">
+    <button class="privacy-modal__x" type="button" id="privacyModalX" aria-label="Kapat">✕</button>
+
+    <h3 class="privacy-modal__title">Gizlilik & Çerez Politikası</h3>
+
+<div class="privacy-modal__content">
+  <div class="legal-layout" id="legalTabs">
+    <aside class="legal-nav" aria-label="Yasal sayfalar">
+      <button type="button" class="legal-tab is-active" data-tab="privacy">Gizlilik</button>
+      <button type="button" class="legal-tab" data-tab="cookies">Çerezler</button>
+      <button type="button" class="legal-tab" data-tab="terms">Kullanım Şartları</button>
+    </aside>
+
+    <div class="legal-panels">
+      <!-- GİZLİLİK -->
+<section class="legal-panel is-active" data-panel="privacy">
+  <p class="legal-lead">
+    Bu bölüm, web sitemizi ziyaret ettiğinizde kişisel verilerinizin nasıl işlendiğine dair genel bilgilendirme sağlar.
+  </p>
+
+  <div class="legal-acc">
+
+    <details open>
+      <summary>Hangi verileri toplayabiliriz?</summary>
+      <div class="legal-body">
+        <ul class="legal-list">
+          <li>İletişim / teklif formları üzerinden paylaştığınız ad-soyad, e-posta, telefon ve mesaj içeriği</li>
+          <li>Proje talebinizle ilgili paylaştığınız sektör, hizmet türü, bütçe aralığı gibi bilgiler</li>
+          <li>Teknik veriler: IP adresi, tarayıcı türü, cihaz bilgisi, ziyaret zamanı gibi kayıtlar</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>Bu verileri hangi amaçlarla kullanırız?</summary>
+      <div class="legal-body">
+        <ul class="legal-list">
+          <li>Talebinize geri dönüş yapmak ve iletişim süreçlerini yürütmek</li>
+          <li>Hizmet/teklif sürecini planlamak ve yürütmek</li>
+          <li>Site güvenliğini sağlamak ve kötüye kullanımı önlemek</li>
+          <li>Site deneyimini ve performansını iyileştirmek</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>Verileriniz üçüncü taraflarla paylaşılır mı?</summary>
+      <div class="legal-body">
+        <p>
+          Kişisel verileriniz üçüncü kişilerle satılmaz ve pazarlama amacıyla paylaşılmaz.
+          Yalnızca yasal yükümlülükler veya teknik hizmet sağlayıcılar (barındırma/altyapı vb.)
+          kapsamında, hizmetin gerektirdiği ölçüde erişim söz konusu olabilir.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Ne kadar süre saklanır?</summary>
+      <div class="legal-body">
+        <p>
+          Veriler, işleme amacının gerektirdiği süre boyunca ve ilgili mevzuatta öngörülen
+          saklama süreleriyle sınırlı olarak saklanır.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>İletişim</summary>
+      <div class="legal-body">
+        <p>
+          Gizlilikle ilgili sorularınız için bizimle iletişime geçebilirsiniz:
+          <strong>info@piklos.com</strong>
+        </p>
+      </div>
+    </details>
+
+  </div>
+</section>
+
+      <!-- ÇEREZLER -->
+<section class="legal-panel" data-panel="cookies">
+  <p class="legal-lead">
+    Bu bölüm, web sitemizde kullanılan çerezler (cookies) hakkında bilgilendirme amacıyla hazırlanmıştır.
+  </p>
+
+  <div class="legal-acc">
+
+    <details open>
+      <summary>Çerez nedir?</summary>
+      <div class="legal-body">
+        <p>
+          Çerezler, ziyaret ettiğiniz web sitesi tarafından tarayıcınıza kaydedilen küçük metin dosyalarıdır.
+          Bu dosyalar; sitenin düzgün çalışması, güvenliğin sağlanması ve kullanıcı deneyiminin iyileştirilmesi
+          gibi amaçlarla kullanılabilir.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Hangi çerez türlerini kullanıyoruz?</summary>
+      <div class="legal-body">
+        <ul class="legal-list">
+          <li><strong>Zorunlu çerezler:</strong> Site güvenliği ve temel işlevler için gereklidir.</li>
+          <li><strong>Tercih çerezleri:</strong> Tercihlerinizin (ör. çerez onayı) hatırlanmasına yardımcı olur.</li>
+          <li><strong>Performans / Analitik:</strong> (Şu an aktif değil) Site performansını ölçmek için kullanılabilir.</li>
+          <li><strong>Pazarlama:</strong> (Şu an aktif değil) Reklam veya yeniden pazarlama amacıyla kullanılabilir.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>Çerezleri nasıl yönetebilirsiniz?</summary>
+      <div class="legal-body">
+        <p>
+          Çerez tercihlerinizi tarayıcı ayarları üzerinden dilediğiniz zaman
+          değiştirebilir, silebilir veya tamamen devre dışı bırakabilirsiniz.
+          Ancak bazı çerezlerin kapatılması, sitenin bazı bölümlerinin
+          beklenen şekilde çalışmamasına neden olabilir.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Çerez tercihinin saklanması</summary>
+      <div class="legal-body">
+        <p>
+          Çerez bilgilendirme tercihiniz, yalnızca site deneyimini yönetmek amacıyla
+          tarayıcınızda (<em>localStorage</em>) saklanır ve üçüncü taraflarla paylaşılmaz.
+        </p>
+      </div>
+    </details>
+
+  </div>
+</section>
+
+      <!-- KULLANIM ŞARTLARI -->
+<section class="legal-panel" data-panel="terms">
+  <p class="legal-lead">
+    Bu web sitesini ziyaret ederek aşağıdaki kullanım şartlarını kabul etmiş sayılırsınız.
+  </p>
+
+  <div class="legal-acc">
+
+    <details open>
+      <summary>İçerik ve fikri mülkiyet</summary>
+      <div class="legal-body">
+        <p>
+          Bu sitede yer alan metin, görsel, tasarım ve diğer içerikler (aksine belirtilmedikçe)
+          Piklos’a aittir veya kullanım hakkı bulunmaktadır. İzinsiz kopyalama, çoğaltma,
+          dağıtım veya yeniden yayınlama yapılamaz.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Bilgilendirme niteliği</summary>
+      <div class="legal-body">
+        <p>
+          Sitedeki içerikler genel bilgilendirme amaçlıdır. Hizmet kapsamı, teslim süreleri
+          ve fiyatlandırma; proje ihtiyaçlarına göre değişiklik gösterebilir.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Sorumluluk sınırı</summary>
+      <div class="legal-body">
+        <p>
+          Site kullanımından doğabilecek doğrudan/dolaylı zararlardan, mevzuatın izin verdiği ölçüde
+          sorumluluk kabul edilmez. Teknik arızalar, erişim kesintileri veya içerik güncellemeleri
+          nedeniyle oluşabilecek durumlar buna dahildir.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Üçüncü taraf bağlantıları</summary>
+      <div class="legal-body">
+        <p>
+          Sitemizde üçüncü taraf sitelere yönlendiren bağlantılar bulunabilir.
+          Bu sitelerin içerik ve politikalarından Piklos sorumlu değildir.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Değişiklik hakkı</summary>
+      <div class="legal-body">
+        <p>
+          Piklos, bu şartları gerektiğinde güncelleme hakkını saklı tutar.
+          Güncel metin yayınlandığı anda geçerli kabul edilir.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>İletişim</summary>
+      <div class="legal-body">
+        <p>
+          Sorularınız için: <strong>info@piklos.com</strong>
+        </p>
+      </div>
+    </details>
+
+  </div>
+</section>
+
+    </div>
+  </div>
+</div>
+
+
+  </div>
+</div>
+
+
+<script>
+  (function(){
+    const key = "piklos_cookie_consent_v1";
+
+    const dot = document.getElementById("cookieDot");
+    const panel = document.getElementById("cookiePanel");
+    const accept = document.getElementById("cookieAccept");
+    const reject = document.getElementById("cookieReject");
+
+    if(!dot || !panel || !accept || !reject) return;
+
+    const saved = localStorage.getItem(key);
+
+    // Kayıt yoksa sadece DOT göster (ekran kaplamaz)
+    if(!saved) dot.classList.add("show");
+
+    const closePanel = () => { panel.hidden = true; };
+
+    dot.addEventListener("click", () => {
+      panel.hidden = !panel.hidden;
+    });
+
+    const save = (v) => {
+      localStorage.setItem(key, v);
+      dot.classList.remove("show");
+      closePanel();
+    };
+
+    accept.addEventListener("click", () => save("accepted"));
+    reject.addEventListener("click", () => save("rejected"));
+
+    // Panel açıkken dışarı tıklayınca kapat
+    document.addEventListener("click", (e) => {
+      if(panel.hidden) return;
+      if(e.target === dot || panel.contains(e.target)) return;
+      closePanel();
+    });
+  })();
+</script>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brandblock">
+      <div class="footer-brand">PIKLOS STUDIO</div>
+      <div class="footer-subbrand">Piklos, bir MEG Digital markasıdır.</div>
+    </div>
+
+    <nav class="footer-links" aria-label="Footer linkleri">
+      <button type="button" class="footer-link" id="openPrivacyModalFooter">Gizlilik & Çerez</button>
+      <span class="footer-sep">•</span>
+      <button type="button" class="footer-link" id="openTermsModal">Kullanım Şartları</button>
+    </nav>
+
+    <div class="footer-contact">
+      <a class="footer-email" href="mailto:info@piklos.com">info@piklos.com</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 <span id="footerYear"></span> Piklos Studio</div>
+
+    <div class="footer-dmca">
+      <a href="//www.dmca.com/Protection/Status.aspx?ID=08376ed8-d32b-482e-92c0-47bcc826fd11"
+         title="DMCA.com Protection Status"
+         class="dmca-badge"
+         target="_blank" rel="nofollow noopener">
+        <img src="https://images.dmca.com/Badges/DMCA_badge_grn_80w.png?ID=08376ed8-d32b-482e-92c0-47bcc826fd11"
+             alt="DMCA.com Protection Status" />
+      </a>
+    </div>
+  </div>
+
+  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"></script>
+
+<script>
+(function(){
+  const modal = document.getElementById("privacyModal");
+  const closeBg = document.getElementById("privacyModalClose");
+  const closeX  = document.getElementById("privacyModalX");
+
+  const openFromCookie  = document.getElementById("openPrivacyModal");
+  const openFromFooter  = document.getElementById("openPrivacyModalFooter");
+  const openTermsFooter = document.getElementById("openTermsModal");
+
+  const tabsRoot = document.getElementById("legalTabs");
+  if(!modal || !tabsRoot) return;
+
+  const tabButtons = Array.from(tabsRoot.querySelectorAll(".legal-tab"));
+  const panels     = Array.from(tabsRoot.querySelectorAll(".legal-panel"));
+
+  function setActive(tabName){
+    tabButtons.forEach(b => b.classList.toggle("is-active", b.dataset.tab === tabName));
+    panels.forEach(p => p.classList.toggle("is-active", p.dataset.panel === tabName));
+  }
+
+function open(tabName = "privacy"){
+  modal.hidden = false;
+
+  // Bir sonraki frame’de class verelim ki transition çalışsın
+  requestAnimationFrame(() => {
+    modal.classList.add("is-open");
+    modal.classList.remove("is-closing");
+  });
+
+  document.body.style.overflow = "hidden";
+  setActive(tabName);
+}
+
+  function close(){
+    modal.hidden = true;
+    document.body.style.overflow = "";
+  }
+
+  // Tab click
+  tabsRoot.addEventListener("click", (e) => {
+    const btn = e.target.closest(".legal-tab");
+    if(!btn) return;
+    setActive(btn.dataset.tab);
+  });
+
+  // Openers
+  openFromCookie?.addEventListener("click", () => open("cookies"));
+  openFromFooter?.addEventListener("click", () => open("privacy"));
+  openTermsFooter?.addEventListener("click", () => open("terms"));
+
+  // Close
+  closeBg?.addEventListener("click", close);
+  closeX?.addEventListener("click", close);
+
+  document.addEventListener("keydown", (e) => {
+    if(e.key === "Escape" && !modal.hidden) close();
+  });
+})();
+</script>
+
+</footer>
+
+    <div class="modal-overlay" id="contact-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="toggleModal()">×</button>
+            <h2 style="margin-bottom: 30px; font-size: 28px;">Projeyi Başlatalım</h2>
+            
+            <form id="projectForm" onsubmit="sendMail(event)">
+                <div class="form-group">
+                    <label>Adınız Soyadınız</label>
+                    <input type="text" class="form-input" id="name" required placeholder="Örn: Ahmet Yılmaz">
+                </div>
+                <div class="form-group">
+                    <label>Proje Türü</label>
+                    <select class="form-select" id="type">
+                        <option value="Web Tasarım">Web Tasarım / Site</option>
+                        <option value="E-Ticaret">E-Ticaret</option>
+                        <option value="Kurumsal Kimlik">Kurumsal Kimlik / Branding</option>
+                        <option value="Özel Yazılım">Özel Yazılım / Diğer</option>
+                    </select>
+                <div class="form-group">
+<div class="form-group fg-urgency">
+  <label>Proje Aciliyeti</label>
+  <select class="form-select" id="urgency" name="urgency">
+    <option value="Esnek">Esnek</option>
+    <option value="2-4 Hafta">2-4 hafta</option>
+    <option value="Acil (1-2 Hafta)">Acil (1-2 hafta)</option>
+  </select>
+</div>
+
+<div class="form-group">
+  <label>Sektör</label>
+  <input type="text" class="form-input" id="sector" placeholder="Örn: Restoran, Spor Salonu, Üretim">
+</div>
+
+                </div>
+                <div class="form-group">
+                    <label>Bütçe Aralığı</label>
+                    <select class="form-select" id="budget">
+                        <option value="15-30 Bin">15.000₺ - 30.000₺</option>
+                        <option value="30-70 Bin">30.000₺ - 70.000₺</option>
+                        <option value="70 Bin Üstü">70.000₺ Üstü</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit">TEKLİF AL</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // 1. PRELOADER
+        window.addEventListener('load', () => {
+            const preloader = document.querySelector('.preloader');
+            setTimeout(() => { preloader.classList.add('hide'); }, 1500); 
+        });
+
+        // 2. MODAL & MAIL
+        function toggleModal() {
+            const modal = document.getElementById('contact-modal');
+            modal.classList.toggle('active');
+        }
+        function sendMail(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const type = document.getElementById('type').value;
+            const urgency = document.getElementById('urgency')?.value || '';
+            const sector = document.getElementById('sector')?.value || '';
+            const budget = document.getElementById('budget').value;
+            const subject = `Yeni Proje Talebi: ${name}`;
+            const body = `Merhabalar Piklos internet sitesi aracılığıyla ulaşıyorum,\n\nİsim & Soyisim: ${name}.\nProje Türü: ${type}\nBütçe Aralığı: ${budget}\nProje Aciliyeti: ${urgency}\nSektör: ${sector}\n\nDetay: ${message}`;
+            window.location.href = `mailto:info@piklos.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            toggleModal();
+        }
+        document.getElementById('contact-modal').addEventListener('click', function(e) {
+            if (e.target === this) toggleModal();
+        });
+
+        // 3. KAR EFEKTİ
+        const canvas = document.getElementById('snow-canvas');
+        const ctx = canvas.getContext('2d');
+        let width = window.innerWidth; let height = window.innerHeight;
+        canvas.width = width; canvas.height = height;
+        const flakeCount = 100; const flakes = [];
+        class Flake {
+            constructor() {
+                this.x = Math.random() * width; this.y = Math.random() * height;
+                this.radius = Math.random() * 2 + 0.5; this.speed = Math.random() * 1 + 0.5;
+                this.opacity = Math.random() * 0.5 + 0.1; this.sway = Math.random() * 0.5 - 0.25;
+            }
+            update() {
+                this.y += this.speed; this.x += this.sway;
+                if (this.y > height) { this.y = 0; this.x = Math.random() * width; }
+            }
+            draw() {
+                ctx.beginPath(); ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`; ctx.fill();
+            }
+        }
+        for (let i = 0; i < flakeCount; i++) flakes.push(new Flake());
+        function animateSnow() {
+            ctx.clearRect(0, 0, width, height);
+            flakes.forEach(flake => { flake.update(); flake.draw(); });
+            requestAnimationFrame(animateSnow);
+        }
+        animateSnow();
+        window.addEventListener('resize', () => {
+            width = window.innerWidth; height = window.innerHeight;
+            canvas.width = width; canvas.height = height;
+        });
+
+        // 4. SLIDER
+const slider = document.querySelector('.drag-scroll');
+
+let isDown = false;
+let startX;
+let scrollLeft;
+let preciseScroll;
+
+// 🔴 MOBİLDE BU KOD HİÇ ÇALIŞMASIN
+if (window.innerWidth > 768) {
+
+  autoScroll();
+
+  slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+    preciseScroll = slider.scrollLeft;
+  });
+
+  slider.addEventListener('mouseleave', () => {
+    isDown = false;
+  });
+
+  slider.addEventListener('mouseup', () => {
+    isDown = false;
+  });
+
+  slider.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 2;
+    slider.scrollLeft = scrollLeft - walk;
+    preciseScroll = slider.scrollLeft;
+  });
+}
+
+
+
+</script>
+
+<script>
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-menu");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+
+    document.body.classList.toggle(
+      "menu-open",
+      navMenu.classList.contains("active")
+    );
+  });
+
+  function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+    document.body.classList.remove("menu-open");
+  }
+</script>
+
+
+    
+</body>
+</html>
