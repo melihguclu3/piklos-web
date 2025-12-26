@@ -16,54 +16,93 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 100px; }
 
-body { 
-    background-color: var(--bg); 
-    color: var(--text-main); 
-    font-family: 'Inter', sans-serif; 
-    overflow-x: hidden; 
-    
-    /* DÜZELTME: Yazıların daha keskin ve doğru kalınlıkta görünmesini sağlar */
-    -webkit-font-smoothing: antialiased; 
-    -moz-osx-font-smoothing: grayscale; /* Mac cihazlarda kalın yazı sorununu çözer */
-    text-rendering: optimizeLegibility; /* Harf aralıklarını düzeltir */
+body {
+  background-color: var(--bg);
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
 
-    p, h1, h2, h3, h4, h5, h6,
+  /* Yazıların daha keskin görünmesi */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+
+  padding-top: 0; /* Masaüstünde padding yok */
+}
+
+/* Metin seçimi */
+p, h1, h2, h3, h4, h5, h6,
 li, span, a, strong, em, label, summary {
-    user-select: text;
-    .slider-wrapper,
-    .marquee-wrap,
-    .preloader,
-    .hamburger {
-        user-select: none;
-}
+  user-select: text;
 }
 
-    padding-top: 0; /* Masaüstünde padding yok */
+/* UI elemanlarında seçim kapalı */
+.slider-wrapper,
+.marquee-wrap,
+.hamburger {
+  user-select: none;
 }
+
 
 /* =========================================
    2. ÖZEL EFEKTLER (SNOW, PRELOADER)
    ========================================= */
 #snow-canvas {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    pointer-events: none; z-index: 9998;
+  position: fixed;
+  inset: 0;
+  width: 100dvw;
+  height: 100dvh;
+  pointer-events: none;
+  z-index: 9998;
 }
 
 .preloader {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background-color: #000; z-index: 100000;
-    display: flex; justify-content: center; align-items: center;
-    transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1);
-}
-.preloader.hide { transform: translateY(-100%); }
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100dvh;           /* mobilde daha stabil */
+  background-color: #000;
+  z-index: 100000;
 
-.loader-content { text-align: center; color: var(--white); }
-.loader-logo { font-size: 40px; font-weight: 900; letter-spacing: -2px; margin-bottom: 20px; animation: pulse 2s infinite; }
-.loader-logo span { color: var(--accent); }
-.loader-line { width: 0; height: 2px; background-color: var(--accent); margin: 0 auto; animation: loadLine 1.5s ease-out forwards; }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transform: translateZ(0);
+  transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1), opacity .35s ease;
+}
+
+.preloader.hide {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;     /* hamburger için kritik */
+}
+
+.loader-content {
+  text-align: center;
+  color: var(--white);
+  padding: 0 16px;          /* mobilde taşmayı azaltır */
+}
+
+.loader-logo {
+  font-size: clamp(28px, 7vw, 40px);  /* mobilde bozulmayı engeller */
+  font-weight: 900;
+  letter-spacing: -2px;
+  margin-bottom: 16px;
+  animation: pulse 2s infinite;
+}
+
+.loader-line {
+  width: 0;
+  height: 2px;
+  background-color: var(--accent);
+  margin: 0 auto;
+  animation: loadLine 1.5s ease-out forwards;
+}
 
 @keyframes loadLine { 0% { width: 0; } 100% { width: 100px; } }
 @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+
 
 /* =========================================
    3. MENÜ (NAVBAR - MASAÜSTÜ)
@@ -2371,4 +2410,48 @@ body::after{
   .tech-grid{
     grid-template-columns: 1fr;
   }
+}/* === PRELOADER MOBILE FIX (en alta ekle) === */
+.preloader{
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+
+  width: 100vw !important;
+  height: 100vh !important;
+  min-width: 100vw !important;
+  min-height: 100vh !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+
+  background: #000 !important;
+  z-index: 100000 !important;
+}
+
+.preloader.hide{
+  pointer-events: none !important; /* hamburger vs için */
+  opacity: 0 !important;
+  transform: translateY(-100%) !important;
+}
+
+/* içerik ortası “pixel perfect” olsun */
+.loader-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  padding: 0 16px;
+}
+
+/* mobilde font taşmasın */
+.loader-logo{
+  font-size: clamp(28px, 7vw, 40px);
 }
