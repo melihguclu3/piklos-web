@@ -2508,3 +2508,33 @@ img, video, canvas { max-width: 100%; height: auto; }
     scroll-snap-align: start;
   }
 }
+@media (max-width: 768px) {
+  .drag-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x; /* 🔥 ASIL FARKI BU YARATIR */
+  }
+
+  .drag-scroll img {
+    pointer-events: none;
+    user-select: none;
+  }
+}
+@media (max-width: 768px) {
+  .drag-scroll::after {
+    content: "← Kaydır →";
+    color: rgba(255,255,255,.4);
+    font-size: 12px;
+    position: absolute;
+    right: 16px;
+    bottom: 8px;
+  }
+}
+/* HAMBURGER DOKUNUŞ FIX */
+.navbar,
+.hamburger {
+  touch-action: manipulation !important;
+  pointer-events: auto !important;
+  z-index: 99999;
+}
