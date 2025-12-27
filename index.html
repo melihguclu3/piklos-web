@@ -42,6 +42,7 @@
 <header>
         <div class="header-bg"></div>
         <div class="floating-tech-bg" aria-hidden="true"></div>
+
         <div class="header-content">
             <div class="sub-title">piklo</div>
             
@@ -1036,66 +1037,6 @@ if (window.innerWidth > 768) {
     document.body.classList.remove("menu-open");
   }
 </script>
-
-<script>
-  // FLOATING TECH BG
-  (function () {
-    // mobilde kapalı
-    if (window.innerWidth <= 768) return;
-
-    // motion azaltma tercihi varsa kapat
-    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    const wrap = document.querySelector(".floating-tech-bg");
-    if (!wrap) return;
-
-    const words = [
-      "React", "Next.js", "Tailwind", "TypeScript",
-      "UI/UX", "Figma", "Motion", "Branding",
-      "SEO", "E-Commerce", "Vercel", "GitHub",
-      "API", "Web", "Design", "Studio"
-    ];
-
-    const count = 18;
-
-    function rand(min, max) {
-      return Math.random() * (max - min) + min;
-    }
-
-    // önce temizle
-    wrap.innerHTML = "";
-
-    for (let i = 0; i < count; i++) {
-      const el = document.createElement("span");
-      el.className = "tech-float";
-      el.textContent = words[Math.floor(Math.random() * words.length)];
-
-      // konum
-      const x = rand(8, 92).toFixed(2) + "%";
-      const y = rand(10, 90).toFixed(2) + "%";
-
-      // hareket mesafesi
-      const dx = rand(-40, 40).toFixed(1) + "px";
-      const dy = rand(-30, 30).toFixed(1) + "px";
-
-      // boyut / süre
-      const size = rand(12, 22).toFixed(1) + "px";
-      const dur = rand(6.5, 12.5).toFixed(2) + "s";
-      const delay = rand(-6, 0).toFixed(2) + "s";
-
-      el.style.setProperty("--x", x);
-      el.style.setProperty("--y", y);
-      el.style.setProperty("--dx", dx);
-      el.style.setProperty("--dy", dy);
-      el.style.setProperty("--size", size);
-      el.style.setProperty("--dur", dur);
-      el.style.setProperty("--delay", delay);
-
-      wrap.appendChild(el);
-    }
-  })();
-</script>
-
     
 </body>
 </html>

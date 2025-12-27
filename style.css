@@ -2541,51 +2541,29 @@ img, video, canvas { max-width: 100%; height: auto; }
 html, body {
   overscroll-behavior-y: none;
 }
-/* =========================
-   FLOATING TECH BG (HERO)
-   ========================= */
-header:not(.navbar){
-  position: relative;
+/* AI kartları – mobil okunurluk fix */
+@media (max-width: 768px) {
+  .ai-card {
+    padding: 22px 20px;      /* 40px çok fazlaydı */
+  }
+
+  .ai-card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .ai-card p {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .ai-icon {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 14px;
+  }
 }
-
-.floating-tech-bg{
-  position: absolute;
-  inset: 0;
-  z-index: 0;              /* header-bg ile aynı katmanda; DOM sırası sayesinde üstte görünür */
-  pointer-events: none;
-  overflow: hidden;
-  opacity: 1;
-}
-
-.floating-tech-bg .tech-float{
-  position: absolute;
-  left: var(--x);
-  top: var(--y);
-  transform: translate(-50%, -50%);
-  font-weight: 800;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  white-space: nowrap;
-
-  /* Görünüm */
-  color: rgba(0, 212, 255, 0.18);
-  text-shadow: 0 0 18px rgba(0, 212, 255, 0.12);
-
-  font-size: var(--size);
-  filter: blur(0px);
-
-  /* Hareket */
-  animation: floatDrift var(--dur) ease-in-out infinite;
-  animation-delay: var(--delay);
-}
-
-@keyframes floatDrift{
-  0%   { transform: translate(-50%, -50%) translate(0, 0); opacity: 0.10; }
-  50%  { transform: translate(-50%, -50%) translate(var(--dx), var(--dy)); opacity: 0.28; }
-  100% { transform: translate(-50%, -50%) translate(0, 0); opacity: 0.10; }
-}
-
-/* Mobilde kapatalım (zaten sitede bazı şeyleri mobilde kapatıyorsun) */
-@media (max-width: 768px){
-  .floating-tech-bg{ display: none; }
+.ai-card {
+  height: auto;
+  min-height: unset;
 }
