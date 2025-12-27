@@ -51,7 +51,9 @@
             <p>Markanız için sadece bir web sitesi değil, yaşayan ve satış getiren dijital bir ekosistem tasarlıyoruz.</p>
             
             <div class="hero-btns">
-                <button onclick="toggleModal()" class="btn-hero btn-primary" style="border-style:solid;">Projeyi Başlat</button>
+          <button onclick="openModal()" class="btn-hero btn-primary" style="border-style:solid;">
+          Başlayalım
+          </button>
                 <a href="#isler" class="btn-hero btn-outline">İşleri Gör</a>
             </div>
         </div>
@@ -485,9 +487,10 @@
     </div>
 
     <section id="iletisim" class="cta-section">
-        <h2 class="cta-title">Bir sonraki büyük <br>fikri konuşalım mı?</h2>
-        <button onclick="toggleModal()" class="btn-big" style="border:none; cursor:pointer;">PROJE BAŞLAT</button>
-    </section>
+        <h2 class="cta-title">Markanızı yeni nesile <br>taşıyın!</h2>
+          <button onclick="openModal()" class="btn-hero btn-primary" style="border-style:solid;">
+          Başlayalım
+          </button>    </section>
 
 <!-- COOKIE DOT (minimal) -->
 <button id="cookieDot" class="cookie-dot" type="button" aria-label="Çerez tercihleri">
@@ -866,79 +869,12 @@ function open(tabName = "privacy"){
 
 </footer>
 
-    <div class="modal-overlay" id="contact-modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="toggleModal()">×</button>
-            <h2 style="margin-bottom: 30px; font-size: 28px;">Projeyi Başlatalım</h2>
-            
-            <form id="projectForm" onsubmit="sendMail(event)">
-                <div class="form-group">
-                    <label>Adınız Soyadınız</label>
-                    <input type="text" class="form-input" id="name" required placeholder="Örn: Ahmet Yılmaz">
-                </div>
-                <div class="form-group">
-                    <label>Proje Türü</label>
-                    <select class="form-select" id="type">
-                        <option value="Web Tasarım">Web Tasarım / Site</option>
-                        <option value="E-Ticaret">E-Ticaret</option>
-                        <option value="Kurumsal Kimlik">Kurumsal Kimlik / Branding</option>
-                        <option value="Özel Yazılım">Özel Yazılım / Diğer</option>
-                    </select>
-                <div class="form-group">
-<div class="form-group fg-urgency">
-  <label>Proje Aciliyeti</label>
-  <select class="form-select" id="urgency" name="urgency">
-    <option value="Esnek">Esnek</option>
-    <option value="2-4 Hafta">2-4 hafta</option>
-    <option value="Acil (1-2 Hafta)">Acil (1-2 hafta)</option>
-  </select>
-</div>
-
-<div class="form-group">
-  <label>Sektör</label>
-  <input type="text" class="form-input" id="sector" placeholder="Örn: Restoran, Spor Salonu, Üretim">
-</div>
-
-                </div>
-                <div class="form-group">
-                    <label>Bütçe Aralığı</label>
-                    <select class="form-select" id="budget">
-                        <option value="15-30 Bin">15.000₺ - 30.000₺</option>
-                        <option value="30-70 Bin">30.000₺ - 70.000₺</option>
-                        <option value="70 Bin Üstü">70.000₺ Üstü</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn-submit">TEKLİF AL</button>
-            </form>
-        </div>
-    </div>
-
+   
     <script>
         // 1. PRELOADER
         window.addEventListener('load', () => {
             const preloader = document.querySelector('.preloader');
             setTimeout(() => { preloader.classList.add('hide'); }, 1500); 
-        });
-
-        // 2. MODAL & MAIL
-        function toggleModal() {
-            const modal = document.getElementById('contact-modal');
-            modal.classList.toggle('active');
-        }
-        function sendMail(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const type = document.getElementById('type').value;
-            const urgency = document.getElementById('urgency')?.value || '';
-            const sector = document.getElementById('sector')?.value || '';
-            const budget = document.getElementById('budget').value;
-            const subject = `Yeni Proje Talebi: ${name}`;
-            const body = `Merhabalar Piklo Studio internet sitesi aracılığıyla ulaşıyorum,\n\nİsim & Soyisim: ${name}.\nProje Türü: ${type}\nBütçe Aralığı: ${budget}\nProje Aciliyeti: ${urgency}\nSektör: ${sector}\n\nDetay: ${message}`;
-            window.location.href = `mailto:info@piklos.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            toggleModal();
-        }
-        document.getElementById('contact-modal').addEventListener('click', function(e) {
-            if (e.target === this) toggleModal();
         });
 
         // 3. KAR EFEKTİ
@@ -1037,7 +973,212 @@ if (window.innerWidth > 768) {
     document.body.classList.remove("menu-open");
   }
 </script>
-    
+
+<div class="modal-overlay" id="contact-modal" aria-hidden="true">
+  <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" type="button" onclick="closeModal()">×</button>
+
+    <h2 id="modalTitle" style="margin-bottom: 30px; font-size: 28px;">İletişim</h2>
+
+    <form id="projectForm" onsubmit="sendForm(event)">
+      <div class="form-group">
+        <label>Adınız Soyadınız</label>
+        <input type="text" class="form-input" name="name" required placeholder="Örn: Ahmet Yılmaz">
+      </div>
+
+      <div class="form-group">
+        <label>Telefon Numaranız</label>
+        <input type="tel" class="form-input" name="phone" required placeholder="Örn: 05XX XXX XX XX">
+      </div>
+
+      <div class="form-group">
+        <label>E-posta Adresiniz</label>
+        <input type="email" class="form-input" name="email" required placeholder="Örn: ornek@mail.com">
+      </div>
+
+      <div class="form-group">
+        <label>Proje Aciliyeti</label>
+        <select class="form-select" name="urgency" required>
+          <option value="Esnek">Esnek</option>
+          <option value="2-4 Hafta">2-4 hafta</option>
+          <option value="Acil (1-2 Hafta)">Acil (1-2 hafta)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Sektör</label>
+        <input type="text" class="form-input" name="sector" placeholder="Örn: Restoran, Spor Salonu, Üretim">
+      </div>
+
+      <div class="form-group">
+        <label>Bütçe Aralığı</label>
+        <select class="form-select" name="budget" required>
+          <option value="15-30 Bin">15.000₺ - 30.000₺</option>
+          <option value="30-70 Bin">30.000₺ - 70.000₺</option>
+          <option value="70 Bin Üstü">70.000₺ Üstü</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn-submit" id="submitBtn">TEKLİF AL</button>
+    </form>
+<!-- Modern Success UI -->
+<div id="successMsg" class="success-wrap" aria-live="polite">
+
+  <div class="success-icon">
+    <div class="success-check"></div>
+  </div>
+
+  <h3 class="success-title">Talebiniz Alındı</h3>
+
+  <p class="success-sub">
+    En kısa sürede sizinle iletişime geçeceğiz.
+  </p>
+
+  <div class="success-mini">
+    <span>Bu sayfayı kapatabilirsiniz</span>
+    <span class="success-dots">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+  </div>
+
+  <!-- ✅ WhatsApp CTA -->
+  <a
+    href="https://wa.me/905522095089?text=Merhaba,%20web%20siteniz%20üzerinden%20form%20doldurdum."
+    target="_blank"
+    class="success-whatsapp"
+  >
+    Beklemek istemiyor musunuz? Hemen WhatsApp'tan yazın →
+  </a>
+
+</div>
+
+
+
+  </div>
+</div>
+
+<script>
+const FORMSPREE_URL = "https://formspree.io/f/mlgejkyy";
+
+function openModal() {
+  const modal = document.getElementById("contact-modal");
+  modal.classList.add("active");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+}
+
+function closeModal() {
+  const modal = document.getElementById("contact-modal");
+  modal.classList.remove("active");
+  modal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-open");
+}
+
+async function sendForm(e) {
+  e.preventDefault();
+
+  const form = document.getElementById("projectForm");
+  const success = document.getElementById("successMsg");
+  const btn = document.getElementById("submitBtn");
+
+  btn.disabled = true;
+  btn.textContent = "Gönderiliyor...";
+
+  try {
+    const data = new FormData(form);
+
+    const res = await fetch("https://formspree.io/f/mlgejkyy", {
+      method: "POST",
+      body: data,
+      headers: { "Accept": "application/json" }
+    });
+
+    if (!res.ok) {
+      btn.disabled = false;
+      btn.textContent = "TEKLİF AL";
+      alert("Form gönderilemedi. Lütfen tekrar deneyin.");
+      return;
+    }
+
+    // ✅ Başarılı: formu gizle, success'i göster
+form.classList.add("fade-out");
+
+setTimeout(() => {
+  form.style.display = "none";
+  success.style.display = "block";
+  requestAnimationFrame(() => success.classList.add("show"));
+}, 280);
+
+
+    // ✅ 2.5 sn sonra kapat ve resetle
+    setTimeout(() => {
+      // success animasyonunu kapat
+      success.classList.remove("show");
+
+      // modalı kapat
+      closeModal();
+
+      // küçük bir bekleme: kapanış animasyonu bitsin
+      setTimeout(() => {
+        success.style.display = "none";
+        form.classList.remove("fade-out");
+        form.reset();
+        form.style.display = "block";
+        btn.disabled = false;
+        btn.textContent = "TEKLİF AL";
+      }, 300);
+    }, 2500);
+
+  } catch (err) {
+    btn.disabled = false;
+    btn.textContent = "TEKLİF AL";
+    alert("Bağlantı hatası. Lütfen tekrar deneyin.");
+  }
+}
+
+
+/* Modal dışına tıklayınca kapatma */
+document.addEventListener("click", (e) => {
+  const modal = document.getElementById("contact-modal");
+  if (!modal.classList.contains("active")) return;
+  if (e.target === modal) closeModal();
+});
+
+/* ESC ile kapatma */
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeModal();
+});
+</script>
+
+<a
+  href="https://wa.me/905522095089?text=Merhaba,%20projem%20için%20bilgi%20almak%20istiyorum."
+  class="whatsapp-float hidden"
+  target="_blank"
+  aria-label="WhatsApp ile iletişime geç"
+>
+  <svg width="26" height="26" viewBox="0 0 32 32" fill="currentColor">
+    <path d="M19.11 17.44c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.35-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.3s.98 2.67 1.12 2.85c.14.18 1.93 2.95 4.68 4.13.65.28 1.16.45 1.56.57.65.21 1.24.18 1.71.11.52-.08 1.6-.65 1.83-1.27.23-.62.23-1.15.16-1.27-.07-.11-.25-.18-.52-.32z"/>
+    <path d="M16.02 2.93c-7.24 0-13.12 5.88-13.12 13.12 0 2.31.6 4.48 1.65 6.37L2.8 29.07l6.82-1.79c1.83 1 3.93 1.56 6.4 1.56 7.24 0 13.12-5.88 13.12-13.12S23.26 2.93 16.02 2.93zm0 23.86c-2.21 0-4.27-.63-6.02-1.71l-.43-.25-4.04 1.06 1.08-3.94-.28-.41c-1.09-1.78-1.67-3.83-1.67-5.94 0-6.06 4.93-10.99 10.99-10.99s10.99 4.93 10.99 10.99-4.93 10.99-10.99 10.99z"/>
+  </svg>
+</a>
+
+<script>
+const whatsappBtn = document.querySelector(".whatsapp-float");
+
+// Hero yüksekliği kadar aşağı inince göster
+const HERO_OFFSET = window.innerHeight * 0.8;
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > HERO_OFFSET) {
+    whatsappBtn.classList.remove("hidden");
+  } else {
+    whatsappBtn.classList.add("hidden");
+  }
+});
+</script>
+
 </body>
 </html>
 

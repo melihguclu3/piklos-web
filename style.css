@@ -416,12 +416,22 @@ footer {
    6. İLETİŞİM MODAL (POPUP FORM)
    ========================================= */
 .modal-overlay {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(10px);
-    z-index: 200000; opacity: 0; visibility: hidden;
-    transition: all 0.4s ease; display: flex; justify-content: center; align-items: center;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 200000;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
 }
-.modal-overlay.active { opacity: 1; visibility: visible; }
+.modal-overlay.active {
+    display: flex;
+}
+
 .modal-content {
     background: #0f0f0f; width: 90%; max-width: 500px;
     padding: 50px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);
@@ -2585,4 +2595,234 @@ html, body {
   #ai-tech .ai-grid{
     grid-template-columns: 1fr !important;
   }
+}
+/* ===== Premium Success UI (Accent Uyumlu) ===== */
+
+.success-wrap {
+  display: none;
+  text-align: center;
+  padding: 28px 24px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background:
+    radial-gradient(
+      1200px 500px at 50% -20%,
+      color-mix(in srgb, var(--accent) 30%, transparent),
+      transparent 55%
+    ),
+    rgba(15,15,15,0.82);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.55),
+    0 0 0 1px rgba(255,255,255,0.06) inset;
+  transform: translateY(14px) scale(0.98);
+  opacity: 0;
+}
+
+.modal-overlay.active .success-wrap.show {
+  animation: successIn 520ms cubic-bezier(0.2, 1, 0.3, 1) forwards;
+}
+
+@keyframes successIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ICON */
+.success-icon {
+  width: 66px;
+  height: 66px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  box-shadow: 0 0 28px color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+/* DÖNEN HALKA */
+.success-icon::before {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  background: conic-gradient(
+    from 180deg,
+    transparent,
+    color-mix(in srgb, var(--accent) 60%, transparent),
+    transparent
+  );
+  animation: ringSpin 1.2s linear infinite;
+  opacity: 0;
+}
+
+.success-wrap.show .success-icon::before {
+  opacity: 1;
+}
+
+@keyframes ringSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* CHECK */
+.success-check {
+  width: 28px;
+  height: 18px;
+  border-left: 4px solid var(--accent);
+  border-bottom: 4px solid var(--accent);
+  transform: rotate(-45deg);
+  margin-top: -4px;
+  animation: popCheck 520ms cubic-bezier(0.2, 1, 0.3, 1) forwards;
+}
+
+@keyframes popCheck {
+  from {
+    transform: rotate(-45deg) scale(0.6);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(-45deg) scale(1);
+    opacity: 1;
+  }
+}
+
+/* METİNLER */
+.success-title {
+  color: var(--white);
+  font-weight: 800;
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+
+.success-sub {
+  color: var(--text-dim);
+  margin: 0;
+  line-height: 1.65;
+  font-size: 14px;
+}
+
+/* KAPANIYOR DOTS */
+.success-mini {
+  margin-top: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-dim);
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.success-dots {
+  display: inline-flex;
+  gap: 5px;
+}
+
+.success-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.25);
+  animation: dotPulse 1s ease-in-out infinite;
+}
+
+.success-dots span:nth-child(2) { animation-delay: .15s; }
+.success-dots span:nth-child(3) { animation-delay: .3s; }
+
+@keyframes dotPulse {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: .35;
+  }
+  50% {
+    transform: translateY(-4px);
+    opacity: .9;
+  }
+}
+/* Form fade-out */
+#projectForm.fade-out {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .28s ease, transform .28s ease;
+}
+
+/* Form geri gelirken */
+#projectForm {
+  opacity: 1;
+  transform: translateY(0);
+}
+.whatsapp-float {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 16px 40px rgba(37, 211, 102, 0.55);
+}
+.success-whatsapp {
+  margin-top: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .2px;
+  text-decoration: none;
+
+  color: var(--white);
+  background: color-mix(in srgb, var(--accent) 18%, rgba(255,255,255,0.04));
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+
+  box-shadow:
+    0 6px 18px color-mix(in srgb, var(--accent) 25%, transparent),
+    inset 0 0 0 1px rgba(255,255,255,0.04);
+
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+
+.success-whatsapp:hover {
+  transform: translateY(-2px);
+  background: color-mix(in srgb, var(--accent) 28%, rgba(255,255,255,0.06));
+  box-shadow:
+    0 10px 26px color-mix(in srgb, var(--accent) 35%, transparent),
+    inset 0 0 0 1px rgba(255,255,255,0.06);
+}
+/* WhatsApp scroll control */
+.whatsapp-float {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+.whatsapp-float.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px) scale(0.95);
 }
