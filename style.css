@@ -2915,3 +2915,59 @@ html, body {
       0 0 14px rgba(0, 212, 255, 0.22);
   }
 }
+.hero-title {
+  position: relative;
+}
+
+.hero-rotate {
+  display: inline-block;
+  min-width: 220px;
+  transition:
+    opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-rotate.fade-out {
+  opacity: 0;
+  transform: translateY(-12px);
+}
+
+.hero-rotate.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero dönen yazı – gradient */
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    #5303ff,
+    var(--accent),
+    #ff9500
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  text-shadow:
+    0 0 20px rgba(0, 212, 255, 0.25),
+    0 0 40px rgba(125, 64, 255, 0.15);
+}
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.gradient-text {
+  background-size: 200% 200%;
+  animation: gradientMove 6s ease-in-out infinite alternate;
+}
+.hero-rotate.fade-out {
+  opacity: 0;
+  transform: translateY(-12px) scale(0.98);
+}
+
+.hero-rotate.fade-in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}

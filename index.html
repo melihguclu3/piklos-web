@@ -46,7 +46,12 @@
         <div class="header-content">
             <div class="sub-title">piklo</div>
             
-            <h1>Yenilikçi<br>Web Tasarımları</h1>
+ <h1 class="hero-title">
+  <span class="hero-rotate gradient-text">Yenilikçi</span><br>
+  Web Tasarımları
+</h1>
+
+
             
             <p>Markanız için sadece bir web sitesi değil, yaşayan ve satış getiren dijital bir ekosistem tasarlıyoruz.</p>
             
@@ -1234,6 +1239,33 @@ window.addEventListener("scroll", () => {
 <p style="opacity:0; height:0; overflow:hidden;">
   Web tasarım, dijital ajans, marka tasarımı, yazılım çözümleri, Piklo Studio
 </p>
+
+<script>
+  const words = [
+    "Yenilikçi",
+    "AI Destekli",
+    "Kullanışlı",
+    "Hızlı",
+    "Pratik"
+  ];
+
+  const rotateEl = document.querySelector(".hero-rotate");
+  let index = 0;
+
+  setInterval(() => {
+    rotateEl.classList.remove("fade-in");
+    rotateEl.classList.add("fade-out");
+
+    setTimeout(() => {
+      index = (index + 1) % words.length;
+      rotateEl.textContent = words[index];
+      rotateEl.classList.remove("fade-out");
+      rotateEl.classList.add("fade-in");
+    }, 600); // CSS süresiyle birebir
+  }, 3000);
+</script>
+
+
 
 </body>
 </html>
