@@ -107,37 +107,60 @@ li, span, a, strong, em, label, summary {
 /* =========================================
    3. MENÜ (NAVBAR - MASAÜSTÜ)
    ========================================= */
+/* =========================================
+   3. MENÜ (NAVBAR - MASAÜSTÜ) – İNCELTİLMİŞ
+   ========================================= */
 .navbar {
-    position: fixed; top: 0; left: 0; width: 100%; height: 80px;
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 0 5%; background: rgba(5, 5, 5, 0.85); backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05); z-index: 10000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    height: 64px; /* ⬅️ 80px → 64px */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 5%;
+    background: rgba(5, 5, 5, 0.85);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 10000;
     transition: all 0.3s ease;
 }
 
-.navbar .logo { font-size: 24px; font-weight: 900; letter-spacing: -1px; color: var(--white); text-decoration: none; }
-.navbar .logo span { color: var(--accent); }
+.navbar .logo {
+    font-size: 22px; /* biraz daha kompakt */
+    font-weight: 900;
+    letter-spacing: -1px;
+    color: var(--white);
+    text-decoration: none;
+    line-height: 1;
+}
 
-.nav-menu { display: flex; gap: 40px; }
+.navbar .logo span {
+    color: var(--accent);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 32px; /* 40px → 32px */
+}
+
 .nav-menu a {
-    color: var(--white); text-decoration: none; font-size: 13px; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 1px; opacity: 0.7; transition: 0.3s; position: relative;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 12px; /* daha sıkı */
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.7;
+    transition: 0.3s;
+    position: relative;
+    line-height: 1;
 }
-.nav-menu a:hover { opacity: 1; color: var(--accent); }
-.nav-menu a::after {
-    content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0;
-    background-color: var(--accent); transition: width 0.3s ease;
-}
-.nav-menu a:hover::after { width: 100%; }
 
-/* HAMBURGER IKONU (MASAÜSTÜNDE GİZLİ) */
-.hamburger {
-    display: none; cursor: pointer; z-index: 20001;
-}
-.bar {
-    display: block; width: 25px; height: 2px; margin: 5px auto;
-    background-color: var(--white); transition: all 0.3s ease-in-out;
-}
 
 /* =========================================
    4. HERO SECTİON (GİRİŞ EKRANI)
@@ -2825,4 +2848,70 @@ html, body {
   opacity: 0;
   pointer-events: none;
   transform: translateY(12px) scale(0.95);
+}
+@media (max-width: 768px) {
+  .navbar {
+      height: 60px; /* ⬅️ 80px → 60px */
+      padding: 0 16px;
+  }
+
+  body {
+      padding-top: 60px;
+  }
+
+  header:not(.navbar) {
+      height: calc(100vh - 60px);
+  }
+
+  .navbar .logo {
+      font-size: 20px;
+  }
+}
+/* =========================
+   HAMBURGER ICON – FIX
+   ========================= */
+
+.hamburger {
+  width: 28px;
+  height: 20px;
+  display: none; /* masaüstünde gizli */
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 20003;
+}
+
+.hamburger .bar {
+  width: 100%;
+  height: 2px;
+  background-color: var(--white);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+}
+/* AI style gradient text (reuse) */
+.ai-gradient {
+  background: linear-gradient(
+    90deg,
+    #7d40ff,
+    var(--accent),
+    #00ffd5
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  text-shadow:
+    0 0 20px rgba(0, 212, 255, 0.25),
+    0 0 40px rgba(125, 64, 255, 0.15);
+}
+@media (max-width: 768px) {
+  .ai-gradient {
+    text-shadow:
+      0 0 14px rgba(0, 212, 255, 0.22);
+  }
 }
