@@ -2567,3 +2567,22 @@ html, body {
   height: auto;
   min-height: unset;
 }
+@media (max-width: 768px){
+  #ai-tech .ai-card p{
+    display: block !important;
+    -webkit-line-clamp: unset !important;
+    overflow: visible !important;
+  }
+}
+@media (max-width: 768px){
+  #ai-tech .ai-card,
+  #ai-tech .ai-card--mini{
+    min-height: unset !important;
+    height: auto !important;
+  }
+}
+@media (max-width: 768px){
+  #ai-tech .ai-grid{
+    grid-template-columns: 1fr !important;
+  }
+}
